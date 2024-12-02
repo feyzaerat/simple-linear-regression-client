@@ -1,10 +1,10 @@
 import React from 'react'
-
+import "./homePage.css"
 type Props = {}
 
 const HomePage = (props: Props) => {
   return (
-    <div>HomePage</div>
+    <div className='home-layout'>HomePage</div>
   )
 }
 
