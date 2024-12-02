@@ -35,13 +35,13 @@ const Navbar: React.FC = () => {
 
   return (
     <header className="navbar">
-      <div className="navbar__container w-100 justify-space-between">
+      <div className="navbar__container w-100 justify-space-around">
         <div className="navbar__logo w-100 align-i-center d-flex">
           <img src={logo} className="w64" alt="logo" />
           LinearRegression
         </div>
         <nav
-          className={`justify-space-around navbar__links ${isMenuOpen ? "active" : ""}`}
+          className={`justify-space-evenly navbar__links ${isMenuOpen ? "active" : ""}`}
         >
          
           <NavLink 
@@ -54,7 +54,7 @@ const Navbar: React.FC = () => {
             to="/about" 
             className={({ isActive }) => (isActive ? "bold text-success" : "")}
           >
-            About
+            About Me
           </NavLink>
           
           <NavLink 
@@ -75,9 +75,9 @@ const Navbar: React.FC = () => {
           </button>
           {isProfileMenuOpen && (
             <div className="navbar__profile-menu text-right absolute d-flex">
-              <Link to="#profile">Profilim</Link>
-              <Link to="#settings">Ayarlar</Link>
-              <Link to="#logout">Çıkış Yap</Link>
+              <Link to="#profile">Profile</Link>
+              <Link to="#settings">Settings</Link>
+              <Link to="#logout">Exit</Link>
             </div>
           )}
         </div>
