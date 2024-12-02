@@ -36,9 +36,9 @@ const Navbar: React.FC = () => {
   return (
     <header className="navbar">
       <div className="navbar__container w-100 justify-space-around">
-        <div className="navbar__logo w-100 align-i-center d-flex">
+        <div className="navbar__logo w-100 align-i-center  d-flex">
           <img src={logo} className="w64" alt="logo" />
-          LinearRegression
+          <span>Simple Linear Regression</span>
         </div>
         <nav
           className={`justify-space-evenly navbar__links ${isMenuOpen ? "active" : ""}`}
@@ -46,20 +46,20 @@ const Navbar: React.FC = () => {
          
           <NavLink 
             to="/"
-            className={({ isActive }) => (isActive ? "bold text-success" : "")}
+            className={({ isActive }) => (isActive ? "bold text-active" : "")}
           >
             Home
           </NavLink>
           <NavLink 
             to="/about" 
-            className={({ isActive }) => (isActive ? "bold text-success" : "")}
+            className={({ isActive }) => (isActive ? "bold text-active" : "")}
           >
             About Me
           </NavLink>
           
           <NavLink 
             to="/contact" 
-            className={({ isActive }) => (isActive ? "bold text-success" : "")}
+            className={({ isActive }) => (isActive ? "bold text-active" : "")}
           >
             Contact
           </NavLink>
