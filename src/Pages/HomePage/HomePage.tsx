@@ -6,7 +6,7 @@ type Props = {};
 
 const HomePage = (props: Props) => {
   return (
-    <div className="home-layout">
+    <div className="home-layout d-flex justify-center align-i-center gap-1">
       {categories.map((category, index) => (
         <CategoryCard
           key={index}
