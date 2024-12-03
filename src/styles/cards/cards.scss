@@ -1,0 +1,32 @@
+.card {
+   border:none;
+   outline: none;
+   box-shadow: rgba(0, 0, 0, 0.04) 0px 3px 5px;
+  &:hover {
+    transition: 0.3s ease-in-out;
+  }
+  &__default {
+    background: var(--sub-text-color-dark);
+    &:hover {
+      background: var(--sub-text-color-dark--hover);
+    }
+  }
+  &__light {
+    background: var(--white-color);
+    &:hover {
+      background: var(--pure-white-color);
+    }
+  }
+  &__transparent {
+    background: none;
+    &:hover {
+      background: var(--pure-white-color);
+    }
+  }
+  &__sharp {
+    border-radius: 0.25rem;
+  }
+  &__half-rounded {
+    border-radius: 0.5rem;
+  }
+}

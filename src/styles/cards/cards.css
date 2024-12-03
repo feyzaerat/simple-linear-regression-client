@@ -1,0 +1,32 @@
+.card {
+  border: none;
+  outline: none;
+  box-shadow: rgba(0, 0, 0, 0.04) 0px 3px 5px;
+}
+.card:hover {
+  transition: 0.3s ease-in-out;
+}
+.card__default {
+  background: var(--sub-text-color-dark);
+}
+.card__default:hover {
+  background: var(--sub-text-color-dark--hover);
+}
+.card__light {
+  background: var(--white-color);
+}
+.card__light:hover {
+  background: var(--pure-white-color);
+}
+.card__transparent {
+  background: none;
+}
+.card__transparent:hover {
+  background: var(--pure-white-color);
+}
+.card__sharp {
+  border-radius: 0.25rem;
+}
+.card__half-rounded {
+  border-radius: 0.5rem;
+}/*# sourceMappingURL=cards.css.map */
