@@ -20,7 +20,12 @@
   .d-i-flex {
     display: inline-flex;
   }
-
+   .f-direction-column{
+    flex-direction: column;
+   }
+   .f-direction-row{
+    flex-direction: row;
+   }
   .grid-column-one {
     grid-template-columns: repeat(1, 1fr);
   }

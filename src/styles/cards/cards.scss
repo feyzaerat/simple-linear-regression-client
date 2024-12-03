@@ -14,7 +14,7 @@
   &__light {
     background: var(--white-color);
     &:hover {
-      background: var(--pure-white-color);
+      background: var(--soft-light-color);
     }
   }
   &__transparent {
@@ -29,4 +29,15 @@
   &__half-rounded {
     border-radius: 0.5rem;
   }
+  /***********/
+  &__category{
+    max-width: 520px;
+    min-width: 520px;
+    max-height: 260px;
+    min-height: 260px;
+    width: 100%;
+    height: auto;
+    
+  }
+  /***********/
 }

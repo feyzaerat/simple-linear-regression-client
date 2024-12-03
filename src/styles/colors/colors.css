@@ -25,6 +25,7 @@
   --sub-head-color-light: #A4A6A6;
   --text-color-light: #525559;
   --sub-text-color-light: #B1B1B8;
+  --link-color-light: #56aa92;
   /*---hover---*/
   --primary-color-light--hover: #D9985F;
   --secondary-color-light--hover: #96a0a5;
@@ -41,7 +42,6 @@
   --info-color:#106173;
   --warning-color:#F29F05;
   --danger-color:#AD5350;
-  --active-color:#8C7A69;
   --success-color--hover:#72a38f;
   --info-color--hover:#0F8AA6;
   --warning-color--hover:#F2B705;
@@ -50,6 +50,7 @@
   /*DEFAULT COLORS*/
   --white-color:#FEFEFE;
   --pure-white-color:#FFFFFF;
+  --soft-light-color:#f8f8f8;
   --black-color:#444444;
   --pure-black-color:#000000;
   /*DEFAULT COLORS*/

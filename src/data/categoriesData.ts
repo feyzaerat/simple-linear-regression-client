@@ -1,12 +1,14 @@
 export const categories = [
     {
-      title: "Regression via Form",
-      description: "You can enter all data as manually.",
-      imageUrl: "https://via.placeholder.com/150",
+      title: "Regression via Form Input",
+      description: "You can perform regression modeling by entering the dependent and independent variables one by one into the fields in the form.",
+      imageUrl: "/assets/icons/form.png",
+      src: "/form",
     },
     {
-      title: "Regression via Upload",
-      description: "You can upload a xlsx file for import data.",
-      imageUrl: "https://via.placeholder.com/150",
-    },
+      title: "Regression via File Upload",
+      description: "You can perform regression modeling by uploading an Excel file with dependent and independent variables ready to the marked location.",
+      imageUrl: "/assets/icons/file.png",
+      src: "/upload",
+    }
   ];

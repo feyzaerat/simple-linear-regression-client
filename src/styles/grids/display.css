@@ -19,6 +19,12 @@
 :root .d-i-flex {
   display: inline-flex;
 }
+:root .f-direction-column {
+  flex-direction: column;
+}
+:root .f-direction-row {
+  flex-direction: row;
+}
 :root .grid-column-one {
   grid-template-columns: repeat(1, 1fr);
 }

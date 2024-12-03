@@ -2,6 +2,8 @@
   border: none;
   outline: none;
   box-shadow: rgba(0, 0, 0, 0.04) 0px 3px 5px;
+  /***********/
+  /***********/
 }
 .card:hover {
   transition: 0.3s ease-in-out;
@@ -16,7 +18,7 @@
   background: var(--white-color);
 }
 .card__light:hover {
-  background: var(--pure-white-color);
+  background: var(--soft-light-color);
 }
 .card__transparent {
   background: none;
@@ -29,4 +31,12 @@
 }
 .card__half-rounded {
   border-radius: 0.5rem;
+}
+.card__category {
+  max-width: 520px;
+  min-width: 520px;
+  max-height: 260px;
+  min-height: 260px;
+  width: 100%;
+  height: auto;
 }/*# sourceMappingURL=cards.css.map */

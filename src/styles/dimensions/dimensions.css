@@ -1,3 +1,11 @@
 .w64 {
   width: 64px;
+}
+
+.w128 {
+  width: 128px;
+}
+
+.w-full {
+  width: 100%;
 }/*# sourceMappingURL=dimensions.css.map */

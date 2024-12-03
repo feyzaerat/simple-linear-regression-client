@@ -5,6 +5,7 @@
   --font-body: "Roboto", sans-serif;
   --first-head-font-size: 32px;
   --sub-head-font-size: 20px;
+  --small-head-font-size: 18px;
   --text-font-size: 14px;
   --small-text-font-size: 11px;
 
@@ -25,6 +26,11 @@
     font-family: var(--font-heading);
     font-weight: 700;
     font-size: var(--sub-head-font-size);
+  }
+  .small-head {
+    font-family: var(--font-heading);
+    font-weight: 600;
+    font-size: var(--small-head-font-size);
   }
   .text {
     font-weight: 500;
