@@ -1,0 +1,22 @@
+input[type="text"] {
+  outline: none;
+  border: none;
+  padding: 0.25rem;
+  color: var(--text-color-light);
+  background-color: var(--pure-white-color);
+  border-radius: 0.25rem;
+  height: 25px;
+  width: 245px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px,
+    var(--info-color) 0px 8px 16px -8px;
+  &::placeholder {
+    font-size: var(--small-text-font-size);
+    color: var(--sub-text-color-light);
+    font-weight: 400;
+  }
+}
+label {
+  font-size: var(--text-font-size);
+  color: var(--text-color-light);
+  font-weight: 500;
+}

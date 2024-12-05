@@ -1,0 +1,57 @@
+.regression-layout {
+  padding: 1rem;
+  margin: 2rem;
+  border-radius: 0.5rem;
+  background: var(--pure-white-color);
+}
+.regression-layout__content__container {
+  gap: 2rem;
+}
+.regression-layout__content__container__description__container {
+  width: 100%;
+}
+.regression-layout__content__container__form__container {
+  width: 100%;
+}
+.regression-layout__content__container__form__container .form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  margin-bottom: 1rem;
+}
+.regression-layout .formik-upload-container {
+  margin: 1rem 0;
+  display: flex;
+  flex-direction: column;
+}
+.regression-layout .formik-upload-container .custom-file-upload {
+  display: none;
+}
+.regression-layout .formik-upload-container label {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--pure-white-color);
+  color: var(--text-color-light);
+  border: 2px dashed var(--info-color);
+  border-radius: 5px;
+  cursor: pointer;
+  text-align: center;
+  font-size: 0.85rem;
+  transition: background-color 0.3s ease;
+  height: 25px;
+  width: 245px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, var(--info-color) 0px 8px 16px -8px;
+}
+.regression-layout .formik-upload-container label:hover {
+  background: var(--info-color--hover);
+  border: 2px dashed var(--info-color--hover);
+  color: var(--pure-white-color);
+}
+.regression-layout .error-message {
+  font-size: var(--small-text-font-size);
+  color: var(--danger-color);
+  font-weight: 500;
+  font-style: italic;
+  margin: 0.5rem 0;
+}/*# sourceMappingURL=uploadPage.css.map */

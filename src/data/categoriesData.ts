@@ -9,6 +9,6 @@ export const categories = [
       title: "Regression via File Upload",
       description: "You can perform regression modeling by uploading an Excel file with dependent and independent variables ready to the marked location.",
       imageUrl: "/assets/icons/file.png",
-      src: "/upload",
+      src: "/regression-via-upload",
     }
   ];
