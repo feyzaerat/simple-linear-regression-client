@@ -24,6 +24,9 @@
   text-decoration: none;
   list-style: none;
 }
+:root p {
+  margin-bottom: 0 !important;
+}
 :root .first-head {
   font-family: var(--font-heading);
   font-weight: 700;
