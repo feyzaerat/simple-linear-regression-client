@@ -19,6 +19,9 @@
   gap: 0.25rem;
   margin-bottom: 1rem;
 }
+.regression-layout__content__container__result__container {
+  margin-bottom: 0.5rem;
+}
 .regression-layout .formik-upload-container {
   margin: 1rem 0;
   display: flex;
