@@ -1,5 +1,43 @@
-.sidebar-layout{
-    background:var(--primary-color-dark);
-    height: 89vh;
-    padding: 0.5rem;
+.sidebar-layout {
+  //border-right:4px solid var(--success-color);
+  height: 87.25vh;
+  padding: 0.75rem;
+  overflow: hidden;
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 20px 30px;
+    .button-container-collapsed{
+    padding: 1rem 0;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    color: var(--success-color);
+    font-size: 24px;
+    cursor: pointer;
+   
+  }
+  .button-container-NonCollapsed{
+    padding: 1rem;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    color: var(--sub-head-color-light);
+    font-size: 24px;
+    cursor: pointer;
+  }
+  &__container {
+    margin-top: 2rem;
+    span {
+      color: var(--secondary-color-light);
+      font-size: 24px;
+    }
+    &__link {
+      gap: 2rem;
+      color: var(--secondary-color-light)!important;
+    }
+  }
 }
+.transparent{
+    opacity: 0;
+  }
+  .opaque{
+    opacity: 1;
+  }

@@ -43,6 +43,11 @@
   }
   .grid-column-percent-15 {
     grid-template-columns: 15% 85%;
+    transition: grid-template-columns 0.3s ease;
+  }
+  .grid-column-percent-3 {
+    grid-template-columns: 3% 97%;
+    transition: grid-template-columns 0.3s ease;
   }
   .gap-05{
     gap:0.5rem;

@@ -14,13 +14,13 @@
   padding: 0 0.5rem;
 }
 .navbar__logo {
-  font-family: var(--font-brand);
   font-size: 1.25rem;
   font-weight: 600;
   color: var(--primary-color-light);
   gap: 0.5rem;
 }
 .navbar__logo span {
+  font-family: var(--font-brand);
   margin-top: 0.25rem;
   letter-spacing: 0.075em;
 }

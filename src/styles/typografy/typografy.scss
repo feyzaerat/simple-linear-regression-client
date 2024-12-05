@@ -1,8 +1,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&family=Roboto:wght@300;400;500;600;700;800;900&display=swap");
-
-:root {
+@import url('https://fonts.googleapis.com/css2?family=Doto:wght@100..900&family=MonteCarlo&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Parisienne&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Stylish&family=Twinkle+Star&display=swap');:root {
   --font-heading: "Poppins", sans-serif;
   --font-body: "Roboto", sans-serif;
+  --font-brand: "Parisienne", cursive;;
   --first-head-font-size: 32px;
   --sub-head-font-size: 20px;
   --small-head-font-size: 18px;
@@ -16,6 +16,12 @@
   h5,
   h6 {
     font-family: var(--font-heading);
+  }
+  a,
+  ul,
+  li {
+    text-decoration: none;
+    list-style: none;
   }
   .first-head {
     font-family: var(--font-heading);
@@ -35,6 +41,11 @@
   .text {
     font-weight: 500;
     font-size: var(--text-font-size);
+    font-family: var(--font-body);
+  }
+  .small-bold-text {
+    font-weight: 500;
+    font-size: var(--small-text-font-size);
     font-family: var(--font-body);
   }
   .small-text {
@@ -92,10 +103,13 @@
       color: var(--sub-head-color-light--hover);
     }
   }
-  .text-success{
-    color:var(--success-color);
+  .text-success {
+    color: var(--success-color);
   }
-  .text-active{
-    color:var(--active-color);
+  .text-active {
+    color: var(--active-color);
+  }
+  .text-italic{
+    font-style: italic;
   }
 }
