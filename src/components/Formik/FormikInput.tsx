@@ -17,7 +17,7 @@ const FormikInput: React.FC<FormikInputProps> = ({
   label,
 }) => {
   return (
-    <div className="form-group">
+    <div className="form-group ">
       {label && <label htmlFor={id || name}>{label}</label>}
       <Field
         id={id || name}

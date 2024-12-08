@@ -1,10 +1,14 @@
-import React from "react";
-import "./uploadPage.css";
+import React, { useEffect, useState } from "react";
 
 import FormikInput from "../../components/Formik/FormikInput";
 import FormikUpload from "../../components/Formik/FormikUpload";
 import { FormikHandler } from "../../components/Formik/FormikHandkler";
+
 import { regressionValidationSchema } from "../../validatation/validationScheme";
+import variableService from "../../services/variableService";
+
+import { RegressionModel } from "../../models/AddRegressionRequest";
+import "./uploadPage.css";
 
 interface FormValues {
   yValue: string;
@@ -12,54 +16,71 @@ interface FormValues {
   file: File | null;
 }
 
-const UploadPage = () => {
+const UploadPage: React.FC = () => {
+  const [regressionResult, setRegressionResult] =
+    useState<RegressionModel | null>(null);
+
   const initialValues: FormValues = {
     yValue: "",
     xValue: "",
     file: null,
   };
 
-  const handleSubmit = (values: FormValues) => {
-    console.log("Form submitted with values:", values);
+  const handleSubmit = async (values: FormValues) => {
+    try {
+      if (!values.file) {
+        alert("Lütfen xlsx Dosyanızı yükleyin !");
+        return;
+      }
+
+      const formData = new FormData();
+      formData.append("file", values.file);
+      formData.append("xVariableName", values.xValue);
+      formData.append("yVariableName", values.yValue);
+
+      const response = await variableService.addVariable(formData);
+
+      setRegressionResult(response.data);
+    } catch (error) {
+      console.error("Hata Oluştu :", error);
+      setRegressionResult(null);
+    }
+  };
+  const handleClear = () => {
+    setRegressionResult(null);
   };
 
   return (
-    <div className="regression-layout d-flex f-direction-column">
+    <div className="regression-layout d-flex f-direction-column justify-center align-i-center">
       <div className="regression-layout__title__container">
         <p className="sub-head text-center header-light-mode">
           Calculate Regression
         </p>
       </div>
-      <div className="regression-layout__content__container d-flex f-direction-column">
-        <div className="regression-layout__content__container__description__container">
+      <div className="regression-layout__content__container d-flex f-direction-column justify-center align-i-center">
+        <div className="regression-layout__content__container__description__container d-flex f-direction-column justify-center align-i-center">
           <p className="text text-dark-mode">
             You can calculate the regression by uploading your own Excel file.
-            The file must be in xlsx format. Also, the first rows must be empty
-            and the independent variable must be in the first column and the
-            dependent variable must be in the second column.
-          </p>
-          <p className="text text-dark-mode">
-            You need to enter the names of the variables as dependent and
-            independent variables in the fields next to them.
           </p>
         </div>
-        <div className="regression-layout__content__container__action__container d-flex f-direction-row justify-space-around align-i-f-end">
-          <div className="regression-layout__content__container__form__container d-flex f-direction-column align-i-f-end">
+        <div className="regression-layout__content__container__action__container d-grid grid-row-percent-40 justify-space-around align-i-f-end">
+          {/* Form */}
+          <div className="regression-layout__content__container__form__container d-flex f-direction-row align-i-f-end ">
             <FormikHandler
               initialValues={initialValues}
               validationSchema={regressionValidationSchema}
               onSubmit={handleSubmit}
             >
-              <div className="form-input-container d-flex f-direction-column justify-center align-i-start">
+              <div className="form-input-container d-flex f-direction-row justify-center align-i-f-start gap-1">
                 <FormikInput
                   name="yValue"
-                  label="Independent Value"
-                  placeholder="Enter your Independent Value"
+                  label="Dependent Variable"
+                  placeholder="Enter dependent variable"
                 />
                 <FormikInput
                   name="xValue"
-                  label="Dependent Value"
-                  placeholder="Enter your Dependent Value"
+                  label="Independent Variable"
+                  placeholder="Enter independent variable"
                 />
                 <FormikUpload name="file" label="Upload File" />
               </div>
@@ -73,30 +94,44 @@ const UploadPage = () => {
                 <button
                   className="button default-btn danger-btn borderless-btn middle-btn rounded-btn"
                   type="reset"
+                  onClick={handleClear}
                 >
                   Clear
                 </button>
               </div>
             </FormikHandler>
           </div>
+
+          {/* Result */}
           <div className="regression-layout__content__container__result__container d-flex f-direction-column padding-0-05">
-            <p className="text text-dark-mode">Eğim: 0.0075 </p>
-            <p className="text text-dark-mode">Kesişim: 0.0075 </p>
-            <p className="text text-dark-mode">Denklem : yValue = 0.02569*xValue + 0.0075 </p>
-            <p className="text text-dark-mode">
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eaque
-              natus excepturi tenetur sunt, esse, est minima voluptate hic
-              aliquid officiis aliquam? Amet obcaecati deserunt, fugiat fuga
-              similique nesciunt aperiam quod. Maxime voluptatum cumque nostrum,
-              numquam dignissimos, fuga sed ipsam saepe, magnam tempore
-              exercitationem vitae sapiente consectetur consequatur! Veritatis
-              adipisci aspernatur quasi. Hic animi, id quis repellendus alias
-              soluta sapiente atque! Qui et, esse est cupiditate reiciendis
-              facilis quae odit magni facere deleniti. Dolore autem architecto
-              quisquam quod veniam possimus aspernatur dicta ipsum temporibus
-              libero! Aut nobis eos quam iusto necessitatibus. Rem ut earum at
-              unde culpa. 
-            </p>
+            {regressionResult ? (
+              <>
+                <p className="text text-dark-mode">
+                  <b>Kesişim (m):</b> {regressionResult.m.toFixed(4)}
+                </p>
+                <p className="text text-dark-mode">
+                  <b>Eğim (b):</b> {regressionResult.b.toFixed(4)}
+                </p>
+                <p className="text text-dark-mode">
+                  <b>Regresyon Modeliniz :</b> {regressionResult.equation}
+                </p>
+                <p className="text text-dark-mode">
+                  <b>R-Squared (R²):</b> {regressionResult.rsquared.toFixed(6)}
+                </p>
+                <p className="text text-dark-mode">
+                  <b>Standart Hata:</b>{" "}
+                  {regressionResult.standardError.toFixed(4)}
+                </p>
+                <p className="text text-dark-mode">
+                  <b>Ekonomik Yorum : </b>
+                  {regressionResult.economicInterpretation}
+                </p>
+              </>
+            ) : (
+              <p className="text text-dark-mode">
+                Sonuçlarınız ve yorumunuz buraya gelecek.
+              </p>
+            )}
           </div>
         </div>
       </div>

@@ -37,6 +37,9 @@
 :root .grid-column-four {
   grid-template-columns: repeat(4, 1fr);
 }
+:root .grid-column-percent-40 {
+  grid-template-columns: 40% 60%;
+}
 :root .grid-column-percent-25 {
   grid-template-columns: 25% 75%;
 }

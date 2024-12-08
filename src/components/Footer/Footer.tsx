@@ -9,7 +9,10 @@ const Footer = (props: Props) => {
   return (
     <div className="footer-layout text-center p-05 d-flex justify-center align-i-center">
       <div className=" d-flex justify-center align-i-center">
-        <Link to="https://feyzaerat.com.tr" className="small-text text-dark-mode d-flex justify-center align-i-center">
+        <Link
+          to="https://feyzaerat.com.tr"
+          className="small-text text-dark-mode d-flex justify-center align-i-center"
+        >
           <span>
             {" "}
             <img className="w48 margin-025" src={logo} alt="fke-logo" />

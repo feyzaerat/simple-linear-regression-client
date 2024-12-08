@@ -23,7 +23,7 @@
   margin-bottom: 0.5rem;
 }
 .regression-layout .formik-upload-container {
-  margin: 1rem 0;
+  margin: 1.25rem 0;
   display: flex;
   flex-direction: column;
 }
@@ -34,21 +34,20 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: var(--pure-white-color);
-  color: var(--text-color-light);
-  border: 2px dashed var(--info-color);
+  background-color: var(--info-color);
+  color: var(--pure-white-color);
+  border: none;
   border-radius: 5px;
   cursor: pointer;
   text-align: center;
   font-size: 0.85rem;
   transition: background-color 0.3s ease;
-  height: 25px;
-  width: 245px;
+  padding: 0.55rem 0;
+  width: 155px;
   box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, var(--info-color) 0px 8px 16px -8px;
 }
 .regression-layout .formik-upload-container label:hover {
   background: var(--info-color--hover);
-  border: 2px dashed var(--info-color--hover);
   color: var(--pure-white-color);
 }
 .regression-layout .error-message {
